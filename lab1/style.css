@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+body header {
+  width: calc(100% - 200px);
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+body button {
+  height: 40px;
+  width: 100px;
+  background-color: bisque;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.first h1 {
+  text-align: center;
+}
+.first table {
+  width: 200px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.first th, .first td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.first th {
+  background-color: #f0f0f0;
+}
+
+.second h1 {
+  text-align: center;
+}
+.second table {
+  width: 200px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.second th, .second td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.second th {
+  background-color: #f0f0f0;
+}
+
+.third {
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.third h1 {
+  text-align: center;
+}
+.third input {
+  width: 200px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 0;
+}
+
+div {
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+div input {
+  width: 200px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 0;
+}
+div h1 {
+  text-align: center;
+}
+div li {
+  margin-bottom: 20px;
+}
+
+.seven button {
+  width: 200px;
+  height: 80px;
+}
+
+/*# sourceMappingURL=style.css.map */

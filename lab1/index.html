@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Таблица умножения для числа 5</title>
+</head>
+<body>
+<header>
+    <button onclick="ex1()">1</button>
+    <button onclick="ex2()">2</button>
+    <button onclick="ex3()">3</button>
+    <button onclick="ex4()">4</button>
+    <button onclick="ex5()">5</button>
+    <button onclick="ex6()">6</button>
+    <button onclick="ex7()">7</button>
+</header>
+<div id="first" style="display: none;" class="first">
+    <h1>Таблица умножения для числа 5</h1>
+    <table id="multiplicationTable">
+        <thead>
+        <tr>
+            <th>Множитель</th>
+            <th>Результат</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div id="second" style="display: none" class="second">
+    <h1>Расписание</h1>
+    <table id="scheduleTable">
+        <thead>
+        <tr>
+            <th>Время</th>
+            <th>Предмет</th>
+            <th>Преподаватель</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div id="third" style="display: none" class="third">
+    <h1>Введите число</h1>
+    <input id="number" type="number">
+    <button onclick="main()">Вывести</button>
+    <p id="print"></p>
+</div>
+
+<script>
+    function ex4() {
+        document.getElementById("four").style.display = 'flex';
+    }
+
+    const students1 = [
+        ["Иванов", "Иван", 2, "01"],
+        ["Петров", "Петр", 3, "02"],
+        ["Сидоров", "Сергей", 1, "01"],
+        ["Кузнецов", "Николай", 4, "03"],
+        ["Смирнова", "Елена", 2, "02"],
+        ["Васильева", "Анна", 3, "01"]
+    ];
+
+    function getStudents() {
+        const directionCode = document.getElementById("directionCode").value;
+        const studentList = document.getElementById("studentList");
+        studentList.innerHTML = ""; // Очищаем список перед выводом
+
+        students1.forEach(student => {
+            const [lastName, firstName, course, code] = student;
+
+            if (code === directionCode) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${lastName} ${firstName}, Курс: ${course}, Код направления: ${code}`;
+                studentList.appendChild(listItem);
+            } else {
+                console.log(`Другие направления: ${lastName} ${firstName}, Курс: ${course}, Код направления: ${code}`);
+            }
+        });
+
+        if (studentList.innerHTML === "") {
+            const listItem = document.createElement("li");
+            listItem.textContent = "Студенты с таким кодом направления не найдены.";
+            studentList.appendChild(listItem);
+        }
+    }
+</script>
+
+<div id="four" style="display: none" class="four">
+    <h1>Информация о студентах</h1>
+
+    <label for="directionCode">Введите код направления:</label>
+    <input type="text" id="directionCode">
+    <button onclick="getStudents()">Показать студентов</button>
+
+    <h2>Студенты по заданному направлению:</h2>
+    <ul id="studentList"></ul>
+</div>
+
+<div id="five" style="display: none" class="five">
+    <h1>Информация о школьнике</h1>
+    <div id="student-info"></div>
+    <button id="show-info-btn">Показать данные</button>
+</div>
+
+<div id="six" style="display: none" class="six">
+    <h1>Задание 6</h1>
+    <button onclick="createNewArray()">Создать массив и вывести</button>
+</div>
+
+
+<script>
+    let students2 = [
+        ["Иванов", "Иван", "Иванович", 1, "123"],
+        ["Петров", "Петр", "Петрович", 2, "456"],
+        ["Сидоров", "Алексей", "Алексеевич", 3, "789"],
+        ["Смирнов", "Сергей", "Сергеевич", 4, "321"],
+        ["Кузнецов", "Андрей", "Андреевич", 5, "654"],
+        ["Попов", "Александр", "Александрович", 6, "987"]
+    ];
+
+    function ex7() {
+        document.getElementById("seven").style.display = 'flex';
+    }
+
+    function findDirection() {
+        let code = prompt("Введите код направления:");
+
+        console.log("Студенты с кодом направления:", code);
+        students2.forEach(student => {
+            if (student[4] === code) {
+                alert(`ФИО: ${student[0]} ${student[1]} ${student[2]}, Класс: ${student[3]}`);
+            } else {
+                console.log(`Другие студенты: ${student[0]} ${student[1]} ${student[2]}, Класс: ${student[3]}`);
+            }
+        });
+    }
+</script>
+<div id="seven" style="display: none" class="seven">
+    <h1>Задание 7</h1>
+    <button onclick="findDirection()">Найти студентов по коду направления</button>
+</div>
+<script src="scripts/1.js"></script>
+<script src="scripts/2.js"></script>
+<script src="scripts/3.js"></script>
+<script src="scripts/5.js"></script>
+<script src="scripts/6.js"></script>
+</body>
+</html>
