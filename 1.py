@@ -10,15 +10,13 @@ a, b = 0, 5
 x_nodes = np.linspace(a, b, 10)
 y_nodes = f(x_nodes)
 
-#Промеж узлов добавить еще промежуточные точки
-
 # Реализация многочлена Лагранжа
 def lagrange_polynomial(x, x_nodes, y_nodes):
     n = len(x_nodes)
     result = 0.0
     for i in range(n):
         term = y_nodes[i]
-        for j in range(n):  #базисные многочлены Лагранжа
+        for j in range(n):  # базисные многочлены Лагранжа
             if i != j:
                 term *= (x - x_nodes[j]) / (x_nodes[i] - x_nodes[j])
         result += term
@@ -27,6 +25,10 @@ def lagrange_polynomial(x, x_nodes, y_nodes):
 # Погрешности
 def theoretical_error(x):
     return np.abs(f(x) - lagrange_polynomial(x, x_nodes, y_nodes))
+
+# Практическая погрешность
+def practical_error(x_range):
+    return np.max(np.abs(f(x_range) - np.array([lagrange_polynomial(x, x_nodes, y_nodes) for x in x_range])))
 
 # Построение графиков
 x_range = np.linspace(a, b, 100)
@@ -47,6 +49,6 @@ plt.show()
 epsilon_theoretical = np.max(theoretical_error(x_range))
 print(f"Теоретическая погрешность: {epsilon_theoretical}")
 
-
-#2
-
+# Практическая погрешность
+epsilon_practical = practical_error(x_range)
+print(f"Практическая погрешность: {epsilon_practical}")
