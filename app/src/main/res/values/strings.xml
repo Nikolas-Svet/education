@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Components</string>
-    <string name="user_info">Светкин Никита ФИТ-221</string>
+    <string name="app_name">RecyclerView</string>
 </resources>

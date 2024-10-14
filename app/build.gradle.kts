@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.components"
+    namespace = "com.example.recyclerview"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.components"
+        applicationId = "com.example.recyclerview"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
