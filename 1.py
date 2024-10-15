@@ -22,9 +22,6 @@ def lagrange_polynomial(x, x_nodes, y_nodes):
         result += term
     return result
 
-# Погрешности
-def theoretical_error(x):
-    return np.abs(f(x) - lagrange_polynomial(x, x_nodes, y_nodes))
 
 # Практическая погрешность
 def practical_error(x_range):
@@ -44,10 +41,6 @@ plt.ylabel('y')
 plt.title('Lagrange Polynomial Approximation')
 plt.grid(True)
 plt.show()
-
-# Теоретическая погрешность
-epsilon_theoretical = np.max(theoretical_error(x_range))
-print(f"Теоретическая погрешность: {epsilon_theoretical}")
 
 # Практическая погрешность
 epsilon_practical = practical_error(x_range)
