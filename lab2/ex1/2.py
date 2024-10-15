@@ -1,13 +1,10 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Данные
 x1 = [10, 20, 25, 30]
 y1 = [20, 40, 20, 0]
 x2 = [10, 20, 25, 35]
 y2 = [40, 10, 20, 40]
 
-# Построение графика
 plt.plot(x1, y1, color='blue', linewidth=3, label='line1-width-3')
 plt.plot(x2, y2, color='red', linewidth=5, label='line2-width-5')
 plt.title('Two or more lines with different widths and colors with suitable legends')

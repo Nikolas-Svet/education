@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37d0f9e5-4751-4102-a548-b386895da3a9" name="Changes" comment="lab2">
+    <list default="true" id="37d0f9e5-4751-4102-a548-b386895da3a9" name="Changes" comment="add lab4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/10.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/6.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/7.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/8.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/ex2/9.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/ex2/9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/3.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/4.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex1/6.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex1/6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex3.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex4.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex5/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex5/1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex5/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex5/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex5/3.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex5/3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex5/4.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex5/4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/ex5/5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ex5/5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,29 +41,36 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2mJnmAF5I08v9bGc6UqtBw07NXq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "/Users/nikitasvetkin/PycharmProjects/education/lab1",
+    "last_opened_file_path": "/Users/nikitasvetkin/PycharmProjects/education",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lab3/ex3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lab3/ex1" />
       <recent name="$PROJECT_DIR$/doc" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.1">
+  <component name="RunManager" selected="Python.ex2">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,28 +85,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab2/ex1/1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="education" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/ex2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab1/ex2/2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,26 +159,49 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ex2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="education" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab2/ex2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ex2" />
         <item itemvalue="Python.1" />
         <item itemvalue="Python.5" />
         <item itemvalue="Python.4" />
         <item itemvalue="Python.3" />
-        <item itemvalue="Python.2" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d3c3453-044d-4036-ac60-75d3d024d3d0" name="Changes" comment="" />
+      <changelist id="37d0f9e5-4751-4102-a548-b386895da3a9" name="Changes" comment="add lab4" />
       <created>1726803702747</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726803702747</updated>
       <workItem from="1726803703924" duration="2503000" />
       <workItem from="1727015638175" duration="97000" />
+      <workItem from="1728888729033" duration="13000" />
     </task>
     <servers />
   </component>
@@ -203,6 +220,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/education$ex2.coverage" NAME="ex2 Coverage Results" MODIFIED="1728616913044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab2" />
     <SUITE FILE_PATH="coverage/education$1.coverage" NAME="1 Coverage Results" MODIFIED="1727400704942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab2/ex1" />
     <SUITE FILE_PATH="coverage/education$3.coverage" NAME="3 Coverage Results" MODIFIED="1726805630135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1/ex2" />
     <SUITE FILE_PATH="coverage/education$9.coverage" NAME="9 Coverage Results" MODIFIED="1726805284873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1/ex1" />
