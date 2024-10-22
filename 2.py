@@ -1,52 +1,87 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# Исходная функция f(x)
+# Заданная функция
 def f(x):
-    return np.cos(x)  # Например, возьмем функцию cos(x)
+    return np.cos(x)**2 + np.cos(x + 1) + x
 
+# Узлы интерполяции
+x = np.array([0, 1, 2])  # три узла интерполяции
+y = f(x)  # значения функции в узлах
 
-# Функция для интерполяции полиномом Гаусса при n=2
-def gauss_polynomial(x, x_nodes, y_nodes):
-    # Для случая n = 2 используем два узла
-    # корни ортогональных полиномов 
-    w1 = 1  # Вес для первого узла (на практике могут быть другими)
-    w2 = 1  # Вес для второго узла
+# Шаг сетки
+h = x[1] - x[0]
 
-    # Интерполяционный полином Гаусса для двух узлов
-    result = (w1 * y_nodes[0] * (x - x_nodes[1]) / (x_nodes[0] - x_nodes[1])
-              + w2 * y_nodes[1] * (x - x_nodes[0]) / (x_nodes[1] - x_nodes[0]))
+# Точка интерполяции
+x_interp = 1.5
 
-    return result
+# Вычисляем t
+t = (x_interp - x[1]) / h
 
+# Конечные разности первого порядка
+y1_j_half = y[2] - y[1]
 
-# Функция для вычисления практической погрешности
-def practical_error_gauss(x, f, gauss_polynomial, x_nodes, y_nodes):
-    return np.abs(f(x) - gauss_polynomial(x, x_nodes, y_nodes))
+# Конечные разности второго порядка
+y2_j = y[2] - 2 * y[1] + y[0]
 
+# Интерполяционная формула Гаусса
+f_interp = y[1] + y1_j_half * t + y2_j * t * (t - 1) / 2
 
-# Пример узлов и значений
-x0 = 0.5
-x_nodes = [0.25, 0.75]  # Узлы интерполяции
-y_nodes = [f(x_nodes[0]), f(x_nodes[1])]  # Значения функции в узлах
+# Вывод приближенного значения интерполяции
+print(f"Значение функции f(x) в точке x = {x_interp} по интерполяции Гаусса: {f_interp:.8f}")
 
-# Вычисление значения в точке x0 с использованием полинома Гаусса
-y_gauss = gauss_polynomial(x0, x_nodes, y_nodes)
-print(f"Значение интерполяции полиномом Гаусса в точке x0: {y_gauss}")
+# Точное значение функции для сравнения
+exact_value = f(x_interp)
+print(f"Точное значение функции f(x) в точке x = {x_interp}: {exact_value:.8f}")
 
-# Вычисление практической погрешности
-error = practical_error_gauss(x0, f, gauss_polynomial, x_nodes, y_nodes)
-print(f"Практическая погрешность: {error}")
+# Остаточный член
+def third_derivative(x):
+    return -np.cos(x)  # Производная третьего порядка от исходной функции
 
-# Построение графиков для наглядности
-x_range = np.linspace(0, 1, 100)
-y_actual = f(x_range)  # Реальные значения функции
-y_gauss_interp = [gauss_polynomial(x, x_nodes, y_nodes) for x in x_range]  # Интерполированные значения
+R2_x = third_derivative(x_interp) * h**3 * t * (t**2 - 1) / 6
+print(f"Остаточный член R2(x): {R2_x:.8f}")
 
-plt.plot(x_range, y_actual, label='f(x)', color='blue')
-plt.plot(x_range, y_gauss_interp, label='Gauss Polynomial', color='red', linestyle='--')
-plt.scatter(x_nodes, y_nodes, color='green', zorder=5, label='Interpolation Nodes')  # Узлы
+# Заданная точность
+epsilon = 1e-5
+
+# Проверка точности
+if abs(R2_x) <= epsilon:
+    print(f"Интерполяция выполнена с точностью ε = {epsilon}")
+else:
+    print(f"Интерполяция не удовлетворяет точности ε = {epsilon}")
+
+# Построение графика
+x_range = np.linspace(0, 2, 100)
+y_exact = f(x_range)
+
+# Для интерполяции на всём интервале
+y_interp_gauss = []
+for xi in x_range:
+    t = (xi - x[1]) / h
+    f_interp_i = y[1] + y1_j_half * t + y2_j * t * (t - 1) / 2
+    y_interp_gauss.append(f_interp_i)
+
+# Построение графика
+plt.figure(figsize=(10, 6))
+
+# Точная функция
+plt.plot(x_range, y_exact, label="Точная функция", color="blue")
+
+# Интерполяция Гаусса
+plt.plot(x_range, y_interp_gauss, label="Интерполяция Гаусса", color="red", linestyle='--')
+
+# Узлы интерполяции
+plt.scatter(x, y, color='black', zorder=5, label="Узлы интерполяции")
+
+# Значение интерполяции Гаусса в точке
+# plt.scatter(x_interp, f_interp, color='red', zorder=5, label=f"Интерполяция в x = {x_interp}", marker='x', s=100)
+
+# Настройка осей и легенды
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Интерполяция Гаусса и точная функция')
 plt.legend()
-plt.title('Интерполяция полиномом Гаусса при n=2')
+plt.grid(True)
+
+# Отображение графика
 plt.show()
