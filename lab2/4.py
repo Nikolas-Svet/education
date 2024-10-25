@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import time
 def fibonacci(n):
     if n == 0:
         return 0
@@ -6,6 +8,7 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
+
 def lucas(n):
     if n == 0:
         return 2
@@ -13,6 +16,7 @@ def lucas(n):
         return 1
     else:
         return lucas(n - 1) + lucas(n - 2)
+
 
 def fib_with_lucas(n):
     if n == 0:
@@ -28,6 +32,7 @@ def fib_with_lucas(n):
         lj = lucas_with_fib(j)
         return (fi * lj + fj * li) // 2
 
+
 def lucas_with_fib(n):
     if n == 0:
         return 2
@@ -36,19 +41,32 @@ def lucas_with_fib(n):
     else:
         return fibonacci(n - 1) + fibonacci(n + 1)
 
-import time
+n_values = list(range(1, 31))
+fib_standard_times = []
+fib_optimized_times = []
 
-n = 10
+for n in n_values:
+    start_time = time.time()
+    fib_standard = fibonacci(n)
+    time_standard = time.time() - start_time
+    fib_standard_times.append(time_standard)
 
-start_time = time.time()
-fib_standard = fibonacci(n)
-time_standard = time.time() - start_time
+    start_time = time.time()
+    fib_optimized = fib_with_lucas(n)
+    time_optimized = time.time() - start_time
+    fib_optimized_times.append(time_optimized)
 
-start_time = time.time()
-fib_optimized = fib_with_lucas(n)
-time_optimized = time.time() - start_time
+    assert fib_standard == fib_optimized, f"Результаты для n={n} не совпадают!"
 
-print(f"Fibonacci({n}) стандартный: {fib_standard}, время: {time_standard:.6f} с")
-print(f"Fibonacci({n}) оптимизированный: {fib_optimized}, время: {time_optimized:.6f} с")
+plt.figure(figsize=(10, 6))
 
-assert fib_standard == fib_optimized, "Результаты функций не совпадают!"
+plt.plot(n_values, fib_standard_times, label="Стандартный метод", color="blue", marker='o')
+plt.plot(n_values, fib_optimized_times, label="Оптимизированный метод", color="green", marker='x')
+
+plt.xlabel('n')
+plt.ylabel('Время (секунды)')
+plt.title('Сравнение времени выполнения: стандартный vs оптимизированный метод Фибоначчи')
+plt.legend()
+plt.grid(True)
+
+plt.show()

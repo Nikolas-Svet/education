@@ -21,7 +21,7 @@ def main():
     t.penup()
     t.goto(-300, -100)
     t.pendown()
-    draw_mountain(t, -300, -100, 300, -100, 150, 8)
+    draw_mountain(t, -300, -100, 300, -100, 100, 8)
     myWin.exitonclick()
 
 main()

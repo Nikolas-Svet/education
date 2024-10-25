@@ -18,7 +18,7 @@ def main():
     t.penup()
     t.goto(0, 0)
     t.pendown()
-    depth = 12
+    depth = 2
     length = 400
     dragon_curve(t, length, depth)
     myWin.exitonclick()

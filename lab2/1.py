@@ -3,14 +3,16 @@ import time
 import matplotlib.pyplot as plt
 import sys
 
+
 def selection_sort(arr):
     n = len(arr)
     for i in range(n):
         min_idx = i
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             if arr[j] < arr[min_idx]:
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
 
 def quick_sort(arr):
     if len(arr) <= 1:
@@ -22,19 +24,22 @@ def quick_sort(arr):
         right = quick_sort([x for x in arr if x > pivot])
         return left + middle + right
 
+
 sys.setrecursionlimit(1000000)
+
 
 def measure_time(sort_func, arr):
     start_time = time.time()
     if sort_func == quick_sort:
-        arr = sort_func(arr)
+        sort_func(arr)
     else:
         sort_func(arr)
     end_time = time.time()
     return end_time - start_time
 
+
 def run_experiment(input_type):
-    sizes = [100, 500, 1000, 2000, 5000, 10000]
+    sizes = [100, 500, 1000, 2000]
     selection_times = []
     quicksort_times = []
 
@@ -64,7 +69,7 @@ def run_experiment(input_type):
     plt.grid(True)
     plt.show()
 
-input_types = ['random', 'sorted', 'reversed']
+
+input_types = ['sorted', 'reversed', 'random']
 for input_type in input_types:
     run_experiment(input_type)
-

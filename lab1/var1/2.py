@@ -4,13 +4,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# Первый алгоритм (через collections.Counter)
 
 def most_common_letter_counter(s):
-    # Используем Counter для подсчета всех символов
     counter = Counter(s)
-    # Возвращаем символ с наибольшим количеством вхождений
-    return counter.most_common(1)[0]  # Возвращает кортеж (символ, частота)
+    return counter.most_common(1)[0]
 
 
 # Асимптотическая сложность:

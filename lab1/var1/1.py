@@ -14,28 +14,22 @@ def foo(nums):
     else:
         return False
 
-# Генерация 20 массивов разного размера и измерение времени выполнения
-sizes = np.random.randint(100, 1000, 20)  # Генерируем 20 случайных размеров массивов от 100 до 1000
+sizes = np.random.randint(100, 1000, 20)
 times = []
 
-# Измерение времени выполнения для 20 массивов
 for size in sizes:
-    nums = np.random.randint(0, 1000, size).tolist()  # Генерируем случайный массив
+    nums = np.random.randint(0, 1000, size).tolist()
     start_time = time.time()
-    foo(nums)  # Выполняем функцию foo
+    foo(nums)
     end_time = time.time()
-    times.append(end_time - start_time)  # Сохраняем время выполнения
+    times.append(end_time - start_time)
 
-# Рассчет среднего времени
 average_time = sum(times) / len(times)
 
-# Сортируем данные по возрастанию размера массива для корректного отображения графика
 sizes, times = zip(*sorted(zip(sizes, times)))
 
-# Вывод среднего времени в терминал
 print(f"Среднее время выполнения: {average_time} секунд")
 
-# Построение графика
 plt.plot(sizes, times, 'o-', label='Execution time')
 plt.xlabel('Size of input array')
 plt.ylabel('Time (seconds)')

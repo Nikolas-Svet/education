@@ -25,7 +25,7 @@ def main():
     t.backward(100)
     t.down()
     t.color("brown")
-    tree(75, t, 7)
+    tree(100, t, 7)
     myWin.exitonclick()
 
 main()
