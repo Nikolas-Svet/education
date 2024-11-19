@@ -7,7 +7,7 @@ x2 = [2, 3, 5, 6, 8]
 y2 = [1, 5, 10, 17, 20]
 
 plt.plot(x1, y1, color='white', marker='o', markerfacecolor='red', markersize=12)
-plt.plot(x2, y2, color='white', marker='o', markerfacecolor='blue', markersize=6)
+plt.plot(x2, y2, color='white', marker='*', markerfacecolor='blue', markersize=12)
 plt.title('Display marker')
 plt.xlabel('x - axis')
 plt.ylabel('y - axis')

@@ -3,7 +3,7 @@ import numpy as np
 # 10. Нахождение корней полиномов
 
 # a. Полином: x^2 - 4x + 7
-coefficients_a = [1, -4, 7]
+coefficients_a = [1, 0, 1]
 roots_a = np.roots(coefficients_a)
 print("Корни полинома x^2 - 4x + 7:", roots_a)
 

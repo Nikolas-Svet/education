@@ -1,6 +1,6 @@
 import numpy as np
 
-array_chess = np.zeros((4, 4), dtype=int)
+array_chess = np.zeros((4, 6), dtype=int)
 array_chess[1::2, ::2] = 1
 array_chess[::2, 1::2] = 1
 np.fill_diagonal(array_chess, 0)

@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
-x1 = [10, 20, 25, 30]
-y1 = [20, 40, 20, 0]
-x2 = [10, 20, 25, 35]
-y2 = [40, 10, 20, 40]
+x1 = [10, 20, 30]
+y1 = [20, 40, 0]
+x2 = [10, 20, 35]
+y2 = [40, 10, 40]
 
 plt.plot(x1, y1, color='blue', linewidth=3, label='line1-width-3')
 plt.plot(x2, y2, color='red', linewidth=5, label='line2-width-5')
