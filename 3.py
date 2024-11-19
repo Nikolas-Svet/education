@@ -7,20 +7,17 @@ def f(x):
     return np.exp(np.sin(x) + x)
 
 
-x = np.linspace(0, 10, 10)
+x = np.linspace(0, 10, 5)
 y = f(x)
 
 
-# Линейный сплайн вручную
 def linear_spline_manual(x, y, x_vals):
     n = len(x) - 1
     y_vals = []
 
     for x_val in x_vals:
-        # Определяем в каком интервале находится x_val
         for i in range(n):
             if x[i] <= x_val <= x[i + 1]:
-                # Рассчитываем линейный сплайн на этом интервале
                 a_i = y[i]
                 b_i = (y[i + 1] - y[i]) / (x[i + 1] - x[i])
                 y_val = a_i + b_i * (x_val - x[i])
@@ -30,17 +27,14 @@ def linear_spline_manual(x, y, x_vals):
     return np.array(y_vals)
 
 
-# Кубический сплайн вручную
 def cubic_spline_manual(x, y, x_vals):
     n = len(x) - 1
     h = np.diff(x)
     alpha = [0] * (n + 1)
 
-    # Step 1: вычисляем коэффициенты alpha
     for i in range(1, n):
         alpha[i] = (3 / h[i]) * (y[i + 1] - y[i]) - (3 / h[i - 1]) * (y[i] - y[i - 1])
 
-    # Step 2: прогонка
     l = [1] + [0] * n
     mu = [0] * (n + 1)
     z = [0] * (n + 1)
@@ -57,13 +51,11 @@ def cubic_spline_manual(x, y, x_vals):
     d = [0] * n
     a = y[:-1]
 
-    # Step 3: обратная прогонка для вычисления c, b, d
     for j in range(n - 1, -1, -1):
         c[j] = z[j] - mu[j] * c[j + 1]
         b[j] = (y[j + 1] - y[j]) / h[j] - h[j] * (c[j + 1] + 2 * c[j]) / 3
         d[j] = (c[j + 1] - c[j]) / (3 * h[j])
 
-    # Вычисление значений кубического сплайна для x_vals
     y_vals = []
     for x_val in x_vals:
         for i in range(n):
@@ -84,6 +76,10 @@ cubic_spline = CubicSpline(x, y)
 y_linear = linear_spline(x_vals_dense)
 y_cubic = cubic_spline(x_vals_dense)
 
+error_linear = np.abs(y_dense - y_linear)
+error_cubic = np.abs(y_dense - y_cubic)
+
+
 plt.figure(figsize=(12, 8))
 plt.plot(x_vals_dense, y_dense, label='f(x) = exp(sin(x) + x)', color='blue')
 plt.plot(x_vals_dense, y_linear, label='Линейный сплайн (SciPy)', linestyle='--', color='orange')
@@ -94,4 +90,17 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.legend()
 plt.grid()
+plt.show()
+
+
+plt.subplot(2, 1, 2)
+plt.plot(x_vals_dense, error_linear, label='Погрешность линейного сплайна', color='orange')
+plt.plot(x_vals_dense, error_cubic, label='Погрешность кубического сплайна', color='green')
+plt.title('График погрешностей интерполяции')
+plt.xlabel('x')
+plt.ylabel('Погрешность')
+plt.legend()
+plt.grid()
+
+plt.tight_layout()
 plt.show()
