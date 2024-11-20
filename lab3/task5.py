@@ -4,6 +4,7 @@ class Node:
         self.prev = None
         self.next = None
 
+
 class DoubleList:
     def __init__(self):
         self.head = None
@@ -121,3 +122,61 @@ class DoubleList:
             elements.append(repr(current.data))
             current = current.next
         return '[' + ', '.join(elements) + ']'
+
+
+dl = DoubleList()
+
+print("Список пустой?", dl.is_empty())
+
+dl.add_front(10)
+dl.add_front(20)
+dl.add_front(30)
+print("Список после добавления в начало (add_front):", dl)
+
+dl.add_rear(40)
+dl.add_rear(50)
+print("Список после добавления в конец (add_rear):", dl)
+
+print("Размер списка:", dl.size())
+
+print("Поиск элемента 20:", dl.search(20))
+print("Поиск элемента 60:", dl.search(60))
+
+
+print("Удаление из начала (remove_front):", dl.remove_front())
+print("Список после удаления из начала:", dl)
+
+
+print("Удаление из конца (remove_rear):", dl.remove_rear())
+print("Список после удаления из конца:", dl)
+
+dl.insert_before(10, 25)
+print("Список после вставки перед 10 (insert_before):", dl)
+
+dl.insert_after(10, 35)
+print("Список после вставки после 10 (insert_after):", dl)
+
+dl.remove(10)
+print("Список после удаления 10 (remove):", dl)
+
+while not dl.is_empty():
+    dl.remove_front()
+
+print("Список после полного удаления элементов:", dl)
+
+try:
+    dl.remove(100)
+except ValueError as e:
+    print(e)
+
+try:
+    dl.remove_front()
+except IndexError as e:
+    print(e)
+
+try:
+    dl.remove_rear()
+except IndexError as e:
+    print(e)
+
+print("Тестирование завершено.")

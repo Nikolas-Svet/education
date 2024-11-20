@@ -21,6 +21,7 @@ class Stack:
     def size(self):
         return len(self.items)
 
+
 def evaluate_rpn(expression):
     stack = Stack()
     tokens = expression.split()
@@ -66,3 +67,23 @@ def evaluate_rpn(expression):
             return "Ошибка: Некорректное выражение"
     except IndexError:
         return "Ошибка: Недостаточно операндов"
+
+
+test_cases = [
+    ("3 4 +", 7),
+    ("10 2 *", 20),
+    ("10 2 /", 5),
+    ("10 0 /", "Ошибка: Деление на ноль"),
+    ("2 3 ^", 8),
+    ("5 1 2 + 4 * + 3 -", 14),
+    ("1 2 + 4", "Ошибка: Некорректное выражение"),
+    ("1 +", "Ошибка: Недостаточно операндов"),
+    ("1 2 ?", "Ошибка: Неизвестный оператор или операнд '?'"),
+    ("2 3 * 5 +", 11),
+    ("4 2 5 * + 1 3 2 * + /", 2)
+]
+
+for expression, expected in test_cases:
+    result = evaluate_rpn(expression)
+    assert result == expected, f"Ошибка: для '{expression}' ожидалось {expected}, получено {result}"
+    print(f"Выражение: {expression} -> Результат: {result}")

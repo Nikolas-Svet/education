@@ -150,3 +150,48 @@ class UnorderedList:
         return new_list
 
 
+ul = UnorderedList()
+
+print("Начальный список:", ul)
+print("Список пустой?", ul.isEmpty())
+
+ul.append(10)
+ul.append(20)
+ul.append(30)
+print("Список после добавления (append):", ul)
+
+print("Индекс элемента 20:", ul.index(20))
+try:
+    print("Индекс элемента 40:", ul.index(40))
+except ValueError as e:
+    print(e)
+
+ul.insert(1, 15)
+ul.insert(0, 5)
+ul.insert(5, 35)
+print("Список после вставки (insert):", ul)
+
+try:
+    ul.insert(10, 50)
+except IndexError as e:
+    print(e)
+
+print("Извлекаем последний элемент:", ul.pop())
+print("Список после pop:", ul)
+print("Извлекаем элемент на позиции 2:", ul.pop(2))
+print("Список после pop(2):", ul)
+
+try:
+    ul.pop(10)
+except IndexError as e:
+    print(e)
+
+print("Строковое представление списка:", str(ul))
+
+sublist = ul.slice(1, 3)
+print("Срез списка (1, 3):", sublist)
+
+try:
+    ul.slice(3, 1)
+except IndexError as e:
+    print(e)

@@ -73,23 +73,22 @@ class Deque:
 
 import time
 
-def test_stack_performance():
-    stack_list = []
-    stack_linked = Stack()
+stack_list = []
+stack_linked = Stack()
 
-    start_time = time.time()
-    for i in range(15000):
-        stack_list.append(i)
-    while stack_list:
-        stack_list.pop()
-    list_time = time.time() - start_time
+start_time = time.time()
+for i in range(15000):
+    stack_list.append(i)
+while stack_list:
+    stack_list.pop()
+list_time = time.time() - start_time
 
-    start_time = time.time()
-    for i in range(15000):
-        stack_linked.push(i)
-    while not stack_linked.isEmpty():
-        stack_linked.pop()
-    linked_time = time.time() - start_time
+start_time = time.time()
+for i in range(15000):
+    stack_linked.push(i)
+while not stack_linked.isEmpty():
+    stack_linked.pop()
+linked_time = time.time() - start_time
 
-    print(f"Время работы стека на списках Python: {list_time:.5f} сек")
-    print(f"Время работы стека на связном списке: {linked_time:.5f} сек")
+print(f"Время работы стека на списках Python: {list_time:.5f} сек")
+print(f"Время работы стека на связном списке: {linked_time:.5f} сек")
