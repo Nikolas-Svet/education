@@ -5,7 +5,6 @@ import numpy as np
 import math
 from sklearn.cluster import KMeans
 
-# Расширенный список цветов DMC (для примера приведены несколько цветов)
 DMC_COLORS = [
     {'code': '310', 'name': 'Black', 'rgb': (0, 0, 0)},
     {'code': '321', 'name': 'Red', 'rgb': (208, 0, 48)},
@@ -14,10 +13,8 @@ DMC_COLORS = [
     {'code': '820', 'name': 'Royal Blue Dark', 'rgb': (14, 54, 92)},
     {'code': '970', 'name': 'Pumpkin Light', 'rgb': (247, 139, 19)},
     {'code': 'B5200', 'name': 'Snow White', 'rgb': (255, 255, 255)},
-    # Добавьте больше цветов по необходимости
 ]
 
-# Расширенный список символов для обозначения
 SYMBOLS = ['!', '@', '#', '$', '%', '^', '&', '*', '+', '-', '=', '?', '/', '|',
            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
            'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -54,8 +51,24 @@ class CrossStitchPattern:
         self.convert_button = tk.Button(self.master, text="Конвертировать", command=self.convert_image)
         self.convert_button.pack()
 
-        self.canvas = tk.Canvas(self.master)
-        self.canvas.pack()
+        # Добавление контейнера с полосами прокрутки
+        self.canvas_frame = tk.Frame(self.master)
+        self.canvas_frame.pack(fill=tk.BOTH, expand=True)
+
+        # Полосы прокрутки
+        self.scroll_x = tk.Scrollbar(self.canvas_frame, orient=tk.HORIZONTAL)
+        self.scroll_x.pack(side=tk.BOTTOM, fill=tk.X)
+
+        self.scroll_y = tk.Scrollbar(self.canvas_frame, orient=tk.VERTICAL)
+        self.scroll_y.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Холст для изображений
+        self.canvas = tk.Canvas(self.canvas_frame, xscrollcommand=self.scroll_x.set, yscrollcommand=self.scroll_y.set)
+        self.canvas.pack(fill=tk.BOTH, expand=True)
+
+        # Связывание полос прокрутки с холстом
+        self.scroll_x.config(command=self.canvas.xview)
+        self.scroll_y.config(command=self.canvas.yview)
 
     def load_image(self):
         self.filename = filedialog.askopenfilename(title='Выберите изображение')
@@ -64,10 +77,9 @@ class CrossStitchPattern:
             self.display_image(self.original_image)
 
     def display_image(self, img):
-        img.thumbnail((400, 400))
         self.tk_image = ImageTk.PhotoImage(img)
-        self.canvas.config(width=self.tk_image.width(), height=self.tk_image.height())
         self.canvas.create_image(0, 0, anchor='nw', image=self.tk_image)
+        self.canvas.config(scrollregion=self.canvas.bbox(tk.ALL))
 
     def convert_image(self):
         max_colors = int(self.color_entry.get())
@@ -148,16 +160,12 @@ class CrossStitchPattern:
                 x1 = x0 + cell_size
                 y1 = y0 + cell_size
 
-                # Заливка клетки цветом
                 draw.rectangle([x0, y0, x1, y1], fill=color)
 
-                # Рисуем символ
                 draw.text((x0 + cell_size / 2, y0 + cell_size / 2), symbol, fill='black', anchor='mm')
 
-                # Тонкая сетка
                 draw.rectangle([x0, y0, x1, y1], outline='gray')
 
-        # Рисуем счетные линии каждые 10 крестиков
         for i in range(0, width + 1, 10):
             x_line = i * cell_size
             draw.line([(x_line, 0), (x_line, img_height)], fill='black', width=2)
