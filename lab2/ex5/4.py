@@ -1,25 +1,33 @@
+# Светкин Никита ФИТ-221
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-languages = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
-values = [22, 17.5, 8.8, 8, 7.8, 6.8]
+x = [0, 5, 10, 15, 20, 25]
+lang = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
 
-plt.figure(figsize=(10, 6))
+popul = [22.2, 17.6, 8.8, 8.0, 7.7, 6.7]
 
-plt.bar(languages, values, color='blue', zorder=3, alpha=0.8)
+plt.bar(x, popul, width=4, color='blue', zorder=3)
 
-for i, value in enumerate(values):
-    plt.text(i, value + 0.5, str(value), ha='center', va='bottom', fontsize=10, color='black')
+plt.xlim(0, 30)
+plt.ylim(0, 25)
 
-plt.title('Programming Languages Popularity')
-plt.xlabel('Programming Languages')
-plt.ylabel('Values')
-plt.yticks(np.arange(0, 26, 1))
+plt.xticks(np.arange(0, 31, 1), minor=True)
+plt.yticks(np.arange(0, 26, 1), minor=True)
 
-plt.grid(axis='x', color='red', linestyle='-', linewidth=0.7, zorder=1)
-plt.grid(axis='y', color='red', linestyle='-', linewidth=0.5, zorder=1)
-plt.gca().yaxis.set_minor_locator(plt.MultipleLocator(1))
+plt.xticks(x, lang)
+plt.yticks(x)
 
+for i, v in enumerate(popul):
+    plt.text(x[i], v + 1, str(v)+"00000")
 
-plt.tight_layout()
+plt.grid(color='red', zorder=0)
+plt.grid(which='minor', color='gray', linestyle='dashed', zorder=0)
+
+plt.xlabel('Languages')
+plt.ylabel('Popularity')
+plt.title('PopularitY of Programming Language\nWorldwide, Oct 2017 compared to \
+a year ago')
+
 plt.show()

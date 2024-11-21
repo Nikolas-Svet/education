@@ -1,5 +1,7 @@
-from data import data, df
-import pandas as pd
+# Светкин Никита ФИТ-221
+
+from data import df
+
 
 df['cheer'] = df['cheer'].astype(float)
 

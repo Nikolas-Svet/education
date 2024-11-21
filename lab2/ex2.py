@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 import matplotlib.pyplot as plt
 import numpy as np
 

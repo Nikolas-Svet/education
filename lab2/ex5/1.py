@@ -1,20 +1,18 @@
+# Светкин Никита ФИТ-221
+
 import matplotlib.pyplot as plt
-import numpy as np
 
-languages = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
-values = [22, 17.5, 8.8, 8, 7.8, 6.8]
+lang = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+popul = [22.2, 17.6, 8.8, 8.0, 7.7, 6.7]
 
-plt.figure(figsize=(10, 6))
-plt.bar(languages, values, color='blue', zorder=3, alpha=0.8)
+plt.bar(lang, popul, color='blue', zorder=3)
 
-plt.title('Programming Languages Popularity')
-plt.xlabel('Programming Languages')
-plt.ylabel('Values')
-plt.yticks(np.arange(0, 26, 1))
+plt.grid(True, which='both', linestyle='dashed', color='r', linewidth=0.5, zorder=0)
 
-plt.grid(axis='x', color='red', linestyle='-', linewidth=0.7, zorder=1)
-plt.grid(axis='y', color='red', linestyle='-', linewidth=0.5, zorder=1)
-plt.gca().yaxis.set_minor_locator(plt.MultipleLocator(1))
+plt.title('Popularity of Programming Language\nWorldwide, Oct 2017 compared to a year ago')
+plt.xlabel('Languages')
+plt.ylabel('Popularity')
 
-plt.tight_layout()
+plt.ylim(0, 25)
+
 plt.show()

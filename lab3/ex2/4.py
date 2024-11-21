@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 from data import *
 
 cell_value = df.iloc[2, 1]

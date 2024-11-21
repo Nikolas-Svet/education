@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 from data import *
 
 filled_cells = df['cheer'].count()

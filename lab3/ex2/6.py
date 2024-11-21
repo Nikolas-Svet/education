@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 from data import *
 
 df.columns = ['ru_name', 'en_name', 'class', 'cheer']

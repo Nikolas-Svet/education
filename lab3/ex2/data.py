@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 import pandas as pd
 
 data = [["Вжик"

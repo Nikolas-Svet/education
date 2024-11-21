@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 from data import *
 import numpy as np
 

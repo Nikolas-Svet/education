@@ -1,3 +1,5 @@
+# Светкин Никита ФИТ-221
+
 from data import *
 
 df1 = df.iloc[1:4, 0:3]
