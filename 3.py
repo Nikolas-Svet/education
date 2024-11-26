@@ -7,7 +7,7 @@ def f(x):
     return np.exp(np.sin(x) + x)
 
 
-x = np.linspace(0, 10, 5)
+x = np.linspace(0, 10, 100)
 y = f(x)
 
 
