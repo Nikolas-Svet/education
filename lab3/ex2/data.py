@@ -13,4 +13,3 @@ data = [["Вжик"
         ["Чип", "Chip", "chipmunk", "0.2"]]
 
 df = pd.DataFrame(data, columns=['ru_name', 'en_name', 'class', 'cheer'])
-

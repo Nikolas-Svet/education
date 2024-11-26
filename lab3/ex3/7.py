@@ -2,8 +2,8 @@
 
 from data import df
 
-female_crimes = df[df['Victim Sex'] == 'F']['Crime Code Description'].value_counts()
-male_crimes = df[df['Victim Sex'] == 'M']['Crime Code Description'].value_counts()
+female_crimes = df[df['Victim Sex'] == 'X']['Crime Code Description'].value_counts()
+male_crimes = df[df['Victim Sex'] == 'H']['Crime Code Description'].value_counts()
 
 print("5 преступлений, от которых чаще страдают женщины:")
 print(female_crimes.nlargest(5))
