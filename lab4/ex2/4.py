@@ -9,7 +9,7 @@ if df["published"].isna().sum() > 0:
 
 df["year"] = df["published"].dt.year
 df["month"] = df["published"].dt.month
-df["dayofweek"] = df["published"].dt.dayofweek + 1
+df["dayofweek"] = df["published"].dt.dayofweek
 df["hour"] = df["published"].dt.hour
 
 print(df[["published", "year", "month", "dayofweek", "hour"]].head())

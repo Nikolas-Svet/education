@@ -2,7 +2,6 @@ from data import df
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Находим топ-20 авторов по количеству публикаций
 top_authors = df['author'].value_counts().head(20).index
 
 df_top_authors = df[df['author'].isin(top_authors)]
