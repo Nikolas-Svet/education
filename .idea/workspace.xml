@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="37d0f9e5-4751-4102-a548-b386895da3a9" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex4/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex4/2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex4/8.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex4/8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex4/polit_free.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex4/polit_free.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex4/polit_not free.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex4/polit_not free.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex4/polit_partly free.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex4/polit_partly free.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex6/5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex6/5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex6/8.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex6/8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex6/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex6/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/ex6/wr294934.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/ex6/wr294934.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/ex1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/ex1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/ex2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/ex2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5/ex3.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/ex3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "machine",
     "last_directory_selection": "/Users/nikitasvetkin/PycharmProjects/education/lab1",
-    "last_opened_file_path": "/Users/nikitasvetkin/PycharmProjects/education2/lab3/ex5",
+    "last_opened_file_path": "/Users/nikitasvetkin/PycharmProjects/education2/lab5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,6 +71,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lab5" />
       <recent name="$PROJECT_DIR$/lab3/ex5" />
       <recent name="$PROJECT_DIR$/lab3/ex6" />
       <recent name="$PROJECT_DIR$/lab3/ex4" />
@@ -88,42 +83,7 @@
       <recent name="$PROJECT_DIR$/doc" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.1">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <option name="ENV_FILES" value="" />
@@ -216,29 +176,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ex2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="education" />
       <option name="ENV_FILES" value="" />
@@ -260,33 +197,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
@@ -325,26 +235,6 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="education" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.ex2" />
@@ -377,6 +267,7 @@
       <workItem from="1731558636518" duration="48000" />
       <workItem from="1732153544045" duration="9205000" />
       <workItem from="1732844955808" duration="7919000" />
+      <workItem from="1733447654078" duration="3293000" />
     </task>
     <task id="LOCAL-00001" summary="add lab3, lab4">
       <option name="closed" value="true" />

@@ -1,3 +1,5 @@
+# Светкин ФИТ-221
+
 import math
 import statistics
 import numpy as np

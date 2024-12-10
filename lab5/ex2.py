@@ -1,3 +1,5 @@
+#Светкин Никита ФИТ-221
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -76,11 +78,11 @@ print(df_cleaned.shape)
 
 # 5
 
-sns.histplot(df_cleaned['SalePrice'], kde=True)
-plt.title('Histogram of Sale Price')
-plt.xlabel('Price')
-plt.ylabel('Count')
-plt.show()
+# sns.histplot(df_cleaned['SalePrice'], kde=True)
+# plt.title('Histogram of Sale Price')
+# plt.xlabel('Price')
+# plt.ylabel('Count')
+# plt.show()
 
 # Асимметрия и эксцесс
 print(f"\nSkewness: {df_cleaned['SalePrice'].skew()}")
