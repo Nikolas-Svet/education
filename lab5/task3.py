@@ -42,6 +42,7 @@ recipe_graph.add_edge("heat griddle", "pour 1/4 cup")
 recipe_graph.add_edge("pour 1/4 cup", "turn when bubbly")
 recipe_graph.add_edge("turn when bubbly", "eat")
 recipe_graph.add_edge("heat syrup", "eat")
+recipe_graph.add_edge("1 cup mix", "heat syrup")
 
 sorted_steps = dfs_topological_sort(recipe_graph)
 
