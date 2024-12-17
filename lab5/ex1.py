@@ -84,6 +84,7 @@ print(f"Мода (statistics.mode): {mode_2}")
 print(f"Мода (scipy.stats.mode): {mode_3}")
 
 # 10. Дисперсия
+x = [10.0, 2, 2.5, 5, 26.0]
 var_ = sum((item - mean_1) ** 2 for item in x) / (len(x) - 1)
 var_2 = statistics.variance(x)
 var_np = np.var(y, ddof=1)
