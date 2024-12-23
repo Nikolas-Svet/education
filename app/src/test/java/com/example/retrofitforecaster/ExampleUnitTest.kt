@@ -1,4 +1,4 @@
-package com.example.recyclerview
+package com.example.retrofitforecaster
 
 import org.junit.Test
 
