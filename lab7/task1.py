@@ -47,7 +47,6 @@ def buildLogicParseTree(exp):
 
 
 def printTree(tree, level=0):
-    """Вывод дерева для отладки"""
     if tree is not None and tree.key is not None:
         print(" " * (level * 4) + f"({tree.key})")
         printTree(tree.left, level + 1)
@@ -80,8 +79,7 @@ def evaluateLogic(tree):
     return result
 
 
-# Пример использования
-exp = "( ( истина и ложь ) или ( истина или ложь) )"
+exp = "( ( истина и ложь ) или ( истина или ложь ) )"
 tree = buildLogicParseTree(exp)
 print("Дерево построено:")
 printTree(tree)
