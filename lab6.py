@@ -1,122 +1,124 @@
 import tkinter as tk
+import numpy as np
 import math
 
-cell_size = 15
+root = tk.Tk()
+canvas = tk.Canvas(root, width=600, height=600, bg='white')
+canvas.pack()
 
-# Инициализация координат пирамиды
-pyramid = [
-    [0, 0, 0],    # Нижняя точка 1
-    [4, 0, 0],    # Нижняя точка 2
-    [4, 4, 0],    # Нижняя точка 3
-    [0, 4, 0],    # Нижняя точка 4
-    [2, 2, 4]     # Вершина пирамиды
+center_x, center_y = 300, 300
+scale = 100
+pixel_size = 10
+
+#коорд пирамиды
+pyramid = np.array([
+    [-1, -1, -1],
+    [1, -1, -1],
+    [1, 1, -1],
+    [-1, 1, -1],
+    [0, 0, 1]
+])
+
+#ребра пирамиды (индексы вершин)
+edges = [
+    (0, 1), (1, 2), (2, 3), (3, 0),  #основ
+    (0, 4), (1, 4), (2, 4), (3, 4)   #рёбра
 ]
 
-# Функции для матриц поворота
-def rotate_x(point, angle):
+# из 3D в 2D
+def project(point):
     x, y, z = point
-    cos_a, sin_a = math.cos(angle), math.sin(angle)
-    y_new = y * cos_a - z * sin_a
-    z_new = y * sin_a + z * cos_a
-    return [x, y_new, z_new]
+    projected_x = int(center_x + x * scale)
+    projected_y = int(center_y - y * scale)
+    return projected_x, projected_y
 
-def rotate_y(point, angle):
-    x, y, z = point
-    cos_a, sin_a = math.cos(angle), math.sin(angle)
-    x_new = x * cos_a + z * sin_a
-    z_new = -x * sin_a + z * cos_a
-    return [x_new, y, z]
+def draw_line(start, end, color='black'):
+    x0, y0 = start
+    x1, y1 = end
+    dx, dy = abs(x1 - x0), abs(y1 - y0)
+    #напправление
+    sx, sy = (1 if x0 < x1 else -1), (1 if y0 < y1 else -1)
+    err = dx - dy
 
-def rotate_z(point, angle):
-    x, y, z = point
-    cos_a, sin_a = math.cos(angle), math.sin(angle)
-    x_new = x * cos_a - y * sin_a
-    y_new = x * sin_a + y * cos_a
-    return [x_new, y_new, z]
+    while True:
+        canvas.create_rectangle(
+            x0 * pixel_size, y0 * pixel_size,  #верхний левый угол
+            (x0 + 1) * pixel_size, (y0 + 1) * pixel_size,  #нижний правый угол
+            fill=color, outline=color
+        )
+        if x0 == x1 and y0 == y1:
+            break
+        e2 = 2 * err
+        #шаги по х
+        if e2 > -dy:
+            err -= dy
+            x0 += sx
+        # шаги по у
+        if e2 < dx:
+            err += dx
+            y0 += sy
 
-# Проекция 3D в 2D для отрисовки
-def project_3d_to_2d(point):
-    x, y, z = point
-    scale = 50 / (z + 10)  # Простая перспектива
-    x_proj = int(500 + scale * x * cell_size)
-    y_proj = int(400 - scale * y * cell_size)
-    return x_proj, y_proj
+def draw_grid():
+    for x in range(0, 600, pixel_size):
+        canvas.create_line(x, 0, x, 600, fill='gray', width=1)
+    for y in range(0, 600, pixel_size):
+        canvas.create_line(0, y, 600, y, fill='gray', width=1)
 
-# Отрисовка пирамиды
-def draw_pyramid(points):
-    canvas_area.delete("all")
-    create_canvas_grid(canvas_area, 1000, 800, cell_size)
-
-    edges = [
-        (0, 1), (1, 2), (2, 3), (3, 0),  # Основание
-        (0, 4), (1, 4), (2, 4), (3, 4)   # Рёбра к вершине
-    ]
-
+def draw_pyramid():
+    canvas.delete('all')
+    draw_grid()
+    #цикл для ребер
     for edge in edges:
-        start, end = edge
-        x1, y1 = project_3d_to_2d(points[start])
-        x2, y2 = project_3d_to_2d(points[end])
-        canvas_area.create_line(x1, y1, x2, y2, fill="black")
+        start = project(pyramid[edge[0]])
+        end = project(pyramid[edge[1]])
+        start_pixel = (start[0] // pixel_size, start[1] // pixel_size)
+        end_pixel = (end[0] // pixel_size, end[1] // pixel_size)
+        draw_line(start_pixel, end_pixel)
 
-# Обработка вращения
-current_angle_x = 0
-current_angle_y = 0
-current_angle_z = 0
 
-def rotate_pyramid(axis):
-    global pyramid, current_angle_x, current_angle_y, current_angle_z
+def rotate_x(angle):
+    rotation_matrix = np.array([
+        [1, 0, 0],
+        [0, math.cos(angle), -math.sin(angle)],
+        [0, math.sin(angle), math.cos(angle)]
+    ])
+    return np.dot(pyramid - center_of_mass, rotation_matrix) + center_of_mass
 
-    if axis == 'x':
-        current_angle_x += math.radians(10)
-        pyramid = [rotate_x(point, math.radians(10)) for point in pyramid]
-    elif axis == 'y':
-        current_angle_y += math.radians(10)
-        pyramid = [rotate_y(point, math.radians(10)) for point in pyramid]
-    elif axis == 'z':
-        current_angle_z += math.radians(10)
-        pyramid = [rotate_z(point, math.radians(10)) for point in pyramid]
+def rotate_y(angle):
+    rotation_matrix = np.array([
+        [math.cos(angle), 0, math.sin(angle)],
+        [0, 1, 0],
+        [-math.sin(angle), 0, math.cos(angle)]
+    ])
+    return np.dot(pyramid - center_of_mass, rotation_matrix) + center_of_mass
 
-    draw_pyramid(pyramid)
+def rotate_z(angle):
+    rotation_matrix = np.array([
+        [math.cos(angle), -math.sin(angle), 0],
+        [math.sin(angle), math.cos(angle), 0],
+        [0, 0, 1]
+    ])
+    return np.dot(pyramid - center_of_mass, rotation_matrix) + center_of_mass
 
-# Создание сетки
-def create_canvas_grid(canvas, width, height, cell_size):
-    for x in range(0, width, cell_size):
-        canvas.create_line(x, 0, x, height, fill="gray", dash=(2, 2))
+#центр масс
+center_of_mass = np.mean(pyramid, axis=0)
 
-    for y in range(0, height, cell_size):
-        canvas.create_line(0, y, width, y, fill="gray", dash=(2, 2))
-
-# Интерфейс приложения
-app = tk.Tk()
-app.title("3D Pyramid Rotation")
-canvas_area = tk.Canvas(app, bg="white", width=1000, height=800)
-canvas_area.pack()
-
-create_canvas_grid(canvas_area, 1000, 800, cell_size)
-
-def reset_pyramid():
+def handle_key(event):
     global pyramid
-    pyramid = [
-        [0, 0, 0],
-        [4, 0, 0],
-        [4, 4, 0],
-        [0, 4, 0],
-        [2, 2, 4]
-    ]
-    draw_pyramid(pyramid)
+    if event.keysym == 'Up':
+        pyramid = rotate_x(math.radians(5))
+    elif event.keysym == 'Down':
+        pyramid = rotate_x(math.radians(-5))
+    elif event.keysym == 'Left':
+        pyramid = rotate_y(math.radians(-5))
+    elif event.keysym == 'Right':
+        pyramid = rotate_y(math.radians(5))
+    elif event.keysym == '0':
+        pyramid = rotate_z(math.radians(5))
+    draw_pyramid()
 
-reset_button = tk.Button(app, text="Reset", command=reset_pyramid)
-reset_button.pack(side=tk.LEFT, padx=10, pady=10)
+draw_pyramid()
 
-rotate_x_button = tk.Button(app, text="Rotate X", command=lambda: rotate_pyramid('x'))
-rotate_x_button.pack(side=tk.LEFT, padx=10, pady=10)
+root.bind('<Key>', handle_key)
 
-rotate_y_button = tk.Button(app, text="Rotate Y", command=lambda: rotate_pyramid('y'))
-rotate_y_button.pack(side=tk.LEFT, padx=10, pady=10)
-
-rotate_z_button = tk.Button(app, text="Rotate Z", command=lambda: rotate_pyramid('z'))
-rotate_z_button.pack(side=tk.LEFT, padx=10, pady=10)
-
-# Инициализация
-draw_pyramid(pyramid)
-app.mainloop()
+root.mainloop()
